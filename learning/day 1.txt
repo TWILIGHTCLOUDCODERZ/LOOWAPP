@@ -1,0 +1,42 @@
+LOOW:-
+Step 1:-install gitbash and vscoide
+
+step2:-create environemnt
+python -m venv loow
+
+step3:-install pip
+$ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+$ python get-pip.py
+pip help
+pip freeze to check existting python code
+
+step4:-move to env
+$ source env/bin/activate
+
+step 5:-django install
+django-admin startproject loow .
+
+step6:-
+open vscode and start new gitbash terminal (before that in gitbash deactivate the running terminal)
+$ source env/bin/activate run inn vcscode terminal
+$ python manage.py runserver
+http://127.0.0.1:8000/ run in chrome
+
+step7:- navigate to loow folder and open urls.py
+from django.contrib import admin
+from django.urls import path
+from .import views
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),  
+]
+
+step 8:-open views.py
+
+testing
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse('helloworld')
